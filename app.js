@@ -13,6 +13,9 @@ app.get('/site', function (req, res) {
     res.render('site');
 });
 app.get('/game', function (req, res) {
-    res.render('game');
+    res.render('game',{
+      layout:"game",
+    });
 });
+app.use(express.static("public"));
 app.listen(3000);

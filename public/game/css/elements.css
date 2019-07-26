@@ -1,0 +1,103 @@
+#exit{
+  background-image:url(../img/door.png);
+  height: 70px;
+  width: 70px;
+  background-size: cover;
+  position: absolute;
+  transform:translate(-50%,-50%);
+  z-index: 0;
+}
+.enemy{
+  background-image: url(../img/headenemy.png);
+  height: 44px;
+  width: 41px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  transform:translate(-50%,-50%);
+}
+.cube{
+  height:30px;
+  width: 30px;
+  background-image: url(../img/brick.png);
+  position: absolute;
+  transform:translate(-50%,-50%);
+  background-size: cover;
+}
+.container{
+  margin:0 auto;
+  width:510px;
+  min-height: 350px;
+  position: relative;
+}
+body{
+  background-color: #304250;
+}
+.level{
+  background-image: url(../img/level-title.png);
+  width:200px;
+  height:50px;
+  background-size:100% 100%;
+  color: #E9C527;
+  text-shadow: 2px 2px #000000;
+  font-size: 32px;
+  padding-top:10px;
+  text-align: center;
+  margin-right: 10px;
+}
+.number{
+  background-image: url(../img/number.png);
+  width:100px;
+  height:50px;
+  background-size:100% 100%;
+  color: #E9C527;
+  text-shadow: 2px 2px #000000;
+  font-size: 32px;
+  padding-top:10px;
+  text-align: center;
+  margin-right: 10px;
+}
+.lives{
+  background-image: url(../img/number.png);
+  width:100px;
+  height:50px;
+  background-size:100% 100%;
+  color: #E9C527;
+  text-shadow: 2px 2px #000000;
+  font-size: 32px;
+  padding-top:10px;
+  text-align: center;
+}
+#game-info{
+  display:flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.game-message{
+  display:none;
+  position: absolute;
+  top:0;
+  z-index: 1;
+  width: 100%;
+}
+.finished #stage {
+display:none;
+}
+.finished #game-info{
+  display:none;
+}
+.finished .game-message{
+  display:block;
+}
+.game-over{
+  background-image: url(../img/game-over.png);
+  width:100%;
+  height:350px;
+  background-size: contain;
+}
+.you-win{
+  background-image: url(../img/you-win.png);
+  width:100%;
+  height:350px;
+  background-size: contain;
+}

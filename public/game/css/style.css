@@ -1,0 +1,30 @@
+#stage {
+  width: 500px;
+  height: 300px;
+  background-color: gray;
+  position: relative;
+  background-image: url(../img/bg/tile.png);
+  overflow:hidden;
+  border:5px solid #E9C527;
+
+}
+
+.orc {
+  position: absolute;
+  width: 48px;
+  height: 64px;
+  background-image: url(../img/troll-darkgreen.png);
+  background-position: -48px -64px;
+  transition: left 0.04s, top 0.04s;
+  transform:translate(-50%,-50%);
+}
+.hero-head {
+  position: absolute;
+  width: 41px;
+  height: 44px;
+  background-image: url(../img/redhead.png);
+  transition: left 0.04s, top 0.04s;
+  transform:translate(-50%,-50%);
+  background-size: cover;
+  z-index: 1;
+}
