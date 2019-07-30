@@ -1,0 +1,22 @@
+.animated-rotate{
+  transform: rotate(45deg) scale(0.5);
+}
+.animated-right{
+  transform:translateX(-100vw);
+}
+.animated-left{
+  transform:translateX(100vw);
+}
+.animated{
+  opacity:0;
+}
+.animated.active{
+   transform:translateX(0) scale(1) rotate(0);
+   opacity:1;
+}
+.animated-500{
+  transition:all 0.5s;
+}
+.animated-2000{
+  transition:all 2s;
+}
