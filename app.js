@@ -3,7 +3,7 @@ var exphbs  = require('express-handlebars');
 var sassMiddleware = require("node-sass-middleware");
 var app = express();
 var path = require("path");
-var Scenario=require("./model/Season");
+var Season=require("./model/Season");
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
@@ -46,7 +46,15 @@ app.get('/game-2', function (req, res) {
 app.get('/black-mirror', function (req, res) {
     res.render('black-mirror',{
       layout:"black-mirror",
-      items:Scenario.items
+      items:Season.items
+    });
+});
+app.get('/black-mirror/season/:id', function (req, res) {
+    var season=Season.getSeason(req.params.id);
+    res.render('season',{
+      layout:"black-mirror",
+      bg:season.image,
+      item:season
     });
 });
 app.use(

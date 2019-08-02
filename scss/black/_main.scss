@@ -2,3 +2,12 @@ body{
   background-color: $black;
   color:$white;
 }
+.card{
+  p{
+    color:$black;
+  }
+  h5{
+    text-shadow: 2px 2px 4px $black;
+    color:white;
+  }
+}

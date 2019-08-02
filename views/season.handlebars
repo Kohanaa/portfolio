@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{item.title}}</h1>
+  <h2>year: {{item.year}}</h2>
+  <p>{{item.description}}</p>
+</div>
+<div class="container">
+  <div class="row">
+    {{#each item.episodes}}
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="{{image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{date}}</p>
+          <a href="/black-mirror/season/{{id}}" class="btn btn-primary">details</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
