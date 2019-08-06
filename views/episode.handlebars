@@ -1,0 +1,17 @@
+<div class="container episode-container">
+  <h1>{{item.title}}</h1>
+  <h2>{{item.date}}</h2>
+  <img src="{{item.image}}" alt="">
+</div>
+{{#if item.videos}}
+  <div class="container episode-container">
+    <h2>trailer</h2>
+    <div class="row">
+    {{#each item.videos}}
+    <div class="col-md-4 video-item">
+      <iframe width="100%" height="200" src="https://www.youtube.com/embed/{{this}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    {{/each}}
+  </div>
+  </div>
+{{/if}}

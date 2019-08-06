@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="/css/black.css">
   </head>
   <body{{#if bg}} style="background:url({{bg}}); background-size:cover;"  {{/if}}>
+  <div class="container">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/black-mirror">seasons</a>
+      </li>
+      {{#if season_id}}
+      <li class="breadcrumb-item">
+        <a href="/black-mirror/season/{{season_id}}">season {{season_id}}</a>
+      </li>
+      {{/if}}
+    </ul>
+  </div>
     {{{body}}}
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

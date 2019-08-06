@@ -11,6 +11,12 @@ const items=[
         title:"The National Anthem",
         date:"4 December 2011",
         image:"/img/black/1/1.jpg",
+        videos:[
+          "nSDviEdvw4U",
+          "YrpK90bHO2U",
+          "di6emt8_ie8",
+          "R32qWdOWrTo"
+        ]
       },
       {
         id:2,
@@ -104,7 +110,7 @@ const items=[
     id:4,
     title:"season 4",
     year:2017,
-    image:"/img/black/season3-bg.jpg",
+    image:"/img/black/season4-bg.jpg",
     description:"According to Brooker, the fourth series has even more variety in the episodes than in previous series. Brooker says that there is \"some more hope\" in the series, crediting this to the fact that writing began in July 2016 and continued throughout the 2016 U.S. election.",
     episodes:[
       {
@@ -175,14 +181,25 @@ const items=[
     ]
   },
 ]
-module.exports={
-  getSeason:function(id){
-    for(var i=0; i<items.length;i++){
-      if(items[i].id==id){
-        return items[i];
-      }
+var getSeason=function(id){
+  for(var i=0; i<items.length;i++){
+    if(items[i].id==id){
+      return items[i];
     }
-    return null;
-  },
+  }
+  return null;
+}
+var getEpisode=function(season_id,id){
+  var season=getSeason(season_id);
+  for(var i=0; i<season.episodes.length;i++){
+    if(season.episodes[i].id==id){
+      return season.episodes[i];
+    }
+  }
+  return null;
+}
+module.exports={
+  getSeason:getSeason,
+  getEpisode:getEpisode,
   items:items
 }

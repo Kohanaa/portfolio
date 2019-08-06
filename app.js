@@ -57,6 +57,15 @@ app.get('/black-mirror/season/:id', function (req, res) {
       item:season
     });
 });
+app.get('/black-mirror/episode/:season_id/:id', function (req, res) {
+    var episode=Season.getEpisode(req.params.season_id,req.params.id)
+    res.render('episode',{
+      layout:"black-mirror",
+      bg:episode.image,
+      item:episode,
+      season_id:req.params.season_id
+    });
+});
 app.use(
   sassMiddleware({
     src: path.join(__dirname, "scss"),
