@@ -31,8 +31,26 @@ const items=[
     title:"season 2",
     year:2013,
     image:"/img/black/season2-bg.jpg",
-    description:"Series two consists of three episodes. Brooker described it as \"more epic in scale, but more intimate in scope\". The episodes are more \"understated\" in their technologies. Brooker commented that the second series mirrors the first: the first series has topics of (in order) \"warped political satire\", \"dystopian hellscape\" and \"relationship torn apart by technology\", while the second series presents episodes of these forms in reverse. Each episode in the first series had a male protagonist, so Brooker deliberately wrote female protagonists for series two episodes \"Be Right Back\" and \"White Bear\".",
+    description:"Series two consists of three episodes. Brooker described it as \"more epic in scale, but more intimate in scope\". The episodes are more \"understated\" in their technologies.",
     episodes:[
+      {
+        id:1,
+        title:"Be Right Back",
+        date:"11 February 2013",
+        image:"/img/black/2/1.jpg",
+      },
+      {
+        id:2,
+        title:"White Bear",
+        date:"18 February 2013",
+        image:"/img/black/2/2.jpg",
+      },
+      {
+        id:3,
+        title:"The Waldo Moment",
+        date:"25 February 2013",
+        image:"/img/black/2/3.jpg",
+      },
 
     ]
   },
@@ -43,6 +61,116 @@ const items=[
     image:"/img/black/season3-bg.jpg",
     description:"In developing the third series' stories, Brooker had looked back to the first two series and the Christmas special, and recognised that all the stories were about characters becoming trapped in a situation that they could not escape from.",
     episodes:[
+      {
+        id:1,
+        title:"Nosedive",
+        date:"21 October 2016",
+        image:"/img/black/3/1.jpg",
+      },
+      {
+        id:2,
+        title:"Playtest",
+        date:"21 October 2016",
+        image:"/img/black/3/2.jpg",
+      },
+      {
+        id:3,
+        title:"Shut Up and Dance",
+        date:"21 October 2016",
+        image:"/img/black/3/3.jpg",
+      },
+      {
+        id:4,
+        title:"San Junipero",
+        date:"21 October 2016",
+        image:"/img/black/3/4.jpg",
+      },
+      {
+        id:5,
+        title:"Men Against Fire",
+        date:"21 October 2016",
+        image:"/img/black/3/5.jpg",
+      },
+      {
+        id:6,
+        title:"Hated in the Nation",
+        date:"21 October 2016",
+        image:"/img/black/3/6.jpg",
+      },
+
+    ]
+  },
+  {
+    id:4,
+    title:"season 4",
+    year:2017,
+    image:"/img/black/season3-bg.jpg",
+    description:"According to Brooker, the fourth series has even more variety in the episodes than in previous series. Brooker says that there is \"some more hope\" in the series, crediting this to the fact that writing began in July 2016 and continued throughout the 2016 U.S. election.",
+    episodes:[
+      {
+        id:1,
+        title:"USS Callister",
+        date:"29 December 2017",
+        image:"/img/black/4/1.png",
+      },
+      {
+        id:2,
+        title:"Arkangel",
+        date:"29 December 2017",
+        image:"/img/black/4/2.png",
+      },
+      {
+        id:3,
+        title:"Crocodile",
+        date:"29 December 2017",
+        image:"/img/black/4/3.png",
+      },
+      {
+        id:4,
+        title:"Hang the DJ",
+        date:"29 December 2017",
+        image:"/img/black/4/4.png",
+      },
+      {
+        id:5,
+        title:"Metalhead",
+        date:"29 December 2017",
+        image:"/img/black/4/5.png",
+      },
+      {
+        id:6,
+        title:"Black Museum",
+        date:"29 December 2017",
+        image:"/img/black/4/6.png",
+      },
+
+    ]
+  },
+  {
+    id:5,
+    title:"season 5",
+    year:2019,
+    image:"/img/black/season3-bg.jpg",
+    description:"In December 2017, when Brooker and executive producer Annabel Jones were asked about possibly creating a fifth series of Black Mirror, they said, \"We would love to do it.\" Netflix announced the fifth series via social media on 5 March 2018.",
+    episodes:[
+      {
+        id:1,
+        title:"Striking Vipers",
+        date:"5 June 2019",
+        image:"/img/black/5/1.jpg",
+      },
+      {
+        id:2,
+        title:"Smithereens",
+        date:"5 June 2019",
+        image:"/img/black/5/2.jpg",
+      },
+      {
+        id:3,
+        title:"Rachel, Jack and Ashley Too",
+        date:"5 June 2019",
+        image:"/img/black/5/3.jpg",
+      },
 
     ]
   },
