@@ -3,12 +3,34 @@ var exphbs  = require('express-handlebars');
 var sassMiddleware = require("node-sass-middleware");
 var app = express();
 var path = require("path");
+require('isomorphic-fetch');
 var Season=require("./model/Season");
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.get('/', function (req, res) {
     res.render('home');
+});
+app.get('/starwars', function (req, res) {
+    res.render('starwars',{
+      layout:"starwars",
+    });
+});
+app.get('/starwars/movie', function (req, res) {
+  var url="https://swapi.co/api/films/2/";
+  fetch(url)
+      .then(function(response) {
+          if (response.status >= 400) {
+              throw new Error("Bad response from server");
+          }
+          return response.json();
+      })
+      .then(function(movie) {
+        res.render('starwars-movie',{
+          layout:"starwars",
+          movie:movie
+        });
+      });
 });
 app.get('/site', function (req, res) {
     res.render('site',{

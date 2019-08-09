@@ -156,7 +156,7 @@ const items=[
     id:5,
     title:"season 5",
     year:2019,
-    image:"/img/black/season3-bg.jpg",
+    image:"/img/black/season5-bg.jpg",
     description:"In December 2017, when Brooker and executive producer Annabel Jones were asked about possibly creating a fifth series of Black Mirror, they said, \"We would love to do it.\" Netflix announced the fifth series via social media on 5 March 2018.",
     episodes:[
       {
