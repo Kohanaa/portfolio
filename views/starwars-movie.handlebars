@@ -1,1 +1,7 @@
 <h2>{{movie.title}}</h2>
+<p>{{movie.opening_crawl}}</p>
+<ul>
+  {{#each movie.starships}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>

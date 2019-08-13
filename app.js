@@ -16,9 +16,9 @@ app.get('/starwars', function (req, res) {
       layout:"starwars",
     });
 });
-app.get('/starwars/movie', function (req, res) {
+app.get('/starwars/movie',async function (req, res) {
   var url="https://swapi.co/api/films/2/";
-  fetch(url)
+  var movie=await fetch(url)
       .then(function(response) {
           if (response.status >= 400) {
               throw new Error("Bad response from server");
@@ -26,11 +26,12 @@ app.get('/starwars/movie', function (req, res) {
           return response.json();
       })
       .then(function(movie) {
-        res.render('starwars-movie',{
-          layout:"starwars",
-          movie:movie
-        });
+        return movie;
       });
+    res.render('starwars-movie',{
+      layout:"starwars",
+      movie:movie
+    });
 });
 app.get('/site', function (req, res) {
     res.render('site',{
