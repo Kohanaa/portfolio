@@ -33,6 +33,25 @@ app.get('/starwars/movie',async function (req, res) {
       movie:movie
     });
 });
+app.get('/vk',async function (req, res) {
+  var url="https://api.vk.com/method/users.get?user_ids=1%2C202352181%2C53083705&fields=photo_400_orig&v=5.52&access_token=b7ed65dcb7ed65dcb7ed65dce6b7812136bb7edb7ed65dceabfa9f3a3d557dca808273b";
+  var response=await fetch(url)
+      .then(function(response) {
+          if (response.status >= 400) {
+              throw new Error("Bad response from server");
+          }
+          return response.json();
+      })
+      .then(function(response) {
+          return response;
+      });
+  console.log(response);
+
+    res.render('vk-users',{
+      layout:"site",
+      users:response.response,
+    });
+});
 app.get('/site', function (req, res) {
     res.render('site',{
       layout:"site",
