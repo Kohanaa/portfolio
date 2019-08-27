@@ -1,0 +1,12 @@
+<div class="container" id="vk-groups">
+  <h1>groups</h1>
+  <div class="row">
+    {{#each groups}}
+    <div class="col-md-4">
+    <a href="/vk/groups/{{id}}"><h2>{{name}}</h2></a>  
+      <p>ID: {{id}}</p>
+      <img src="{{photo_50}}" alt="">
+    </div>
+    {{/each}}
+  </div>
+</div>

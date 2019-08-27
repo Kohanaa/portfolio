@@ -1,5 +1,6 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
+var api=require("./model/vk/api.js")
 var sassMiddleware = require("node-sass-middleware");
 var app = express();
 var path = require("path");
@@ -33,8 +34,56 @@ app.get('/starwars/movie',async function (req, res) {
       movie:movie
     });
 });
-app.get('/vk',async function (req, res) {
-  var url="https://api.vk.com/method/users.get?user_ids=1%2C202352181%2C53083705&fields=photo_400_orig&v=5.52&access_token=b7ed65dcb7ed65dcb7ed65dce6b7812136bb7edb7ed65dceabfa9f3a3d557dca808273b";
+app.get("/vk/friends/:id",async (req,res)=>{
+  const friends=await api.getFriends(req.params.id)
+  res.render("vk-friends",{
+    friends:friends.items,
+  })
+} )
+app.get('/vk/users/:id',async function (req, res){
+  var method="groups.get";
+  var queryObj={
+    //user_ids:"1,202352181,53083705,106",
+    fields:"photo_400_orig",
+    user_id:req.params.id,
+    count:"10",
+    v:"5.52",
+  extended:"1"
+  }
+  var queryString = Object.keys(queryObj).map((key) => {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(queryObj[key])
+  }).join('&');
+  var url="https://api.vk.com/method/"+method+"?"+queryString;
+  var response=await fetch(url)
+      .then(function(response) {
+          if (response.status >= 400) {
+              throw new Error("Bad response from server");
+          }
+          return response.json();
+      })
+      .then(function(response) {
+          return response;
+      });
+  console.log(response);
+  res.render('vk-groups',{
+    layout:"site",
+    groups:response.response.items,
+  });
+})
+app.get('/vk/groups/:id',async function (req, res) {
+  //var method="users.get";
+  var method="groups.getMembers";
+  var queryObj={
+    //user_ids:"1,202352181,53083705,106",
+    fields:"photo_400_orig,city,bdate",
+    group_id:req.params.id,
+    count:"10",
+    v:"5.52",
+  }
+  var queryString = Object.keys(queryObj).map((key) => {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(queryObj[key])
+  }).join('&');
+  var url="https://api.vk.com/method/"+method+"?"+queryString;
   var response=await fetch(url)
       .then(function(response) {
           if (response.status >= 400) {
@@ -49,7 +98,7 @@ app.get('/vk',async function (req, res) {
 
     res.render('vk-users',{
       layout:"site",
-      users:response.response,
+      users:response.response.items,
     });
 });
 app.get('/site', function (req, res) {
