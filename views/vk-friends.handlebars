@@ -1,3 +1,26 @@
-{{#each friends}}
-<p>{{city.title}}</p>
-{{/each}}
+<div class="container">
+  <h2>user</h2>
+  <div class="card">
+  <img src="{{user.photo_400_orig}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{user.first_name}}</h5>
+    <p class="card-text">{{user.city.title}}</p>
+    <a href="/vk/friends/{{user.id}}" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+  <h3>friends</h3>
+  <div class="row">
+    {{#each friends}}
+    <div class="col-md-3">
+      <div class="card">
+      <img src="{{photo_400_orig}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{first_name}}</h5>
+        <p class="card-text">{{city.title}}</p>
+        <a href="/vk/friends/{{id}}" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+    {{/each}}
+  </div>
+</div>

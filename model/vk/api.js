@@ -45,4 +45,5 @@ const getFriends=async (id)=>{
 check();*/
 module.exports={
   getFriends:getFriends,
+  getUser:getUser,
 }

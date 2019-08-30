@@ -35,9 +35,14 @@ app.get('/starwars/movie',async function (req, res) {
     });
 });
 app.get("/vk/friends/:id",async (req,res)=>{
-  const friends=await api.getFriends(req.params.id)
+  const friends=await api.getFriends(req.params.id);
+  const user=await api.getUser(req.params.id);
+  console.log(user[0]);
+  console.log(user[0].id);
   res.render("vk-friends",{
-    friends:friends.items,
+    layout:"vk-users",
+    user:user[0],
+    friends:friends ? friends.items :[],
   })
 } )
 app.get('/vk/users/:id',async function (req, res){
