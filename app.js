@@ -6,6 +6,7 @@ var app = express();
 var path = require("path");
 require('isomorphic-fetch');
 var Season=require("./model/Season");
+const db = require("./model/db");
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
@@ -139,22 +140,23 @@ app.get('/game-2', function (req, res) {
       layout:"game",
     });
 });
-app.get('/black-mirror', function (req, res) {
+app.get('/black-mirror', async function (req, res) {
+  var items=await Season.list();
     res.render('black-mirror',{
       layout:"black-mirror",
-      items:Season.items
+      items:items
     });
 });
-app.get('/black-mirror/season/:id', function (req, res) {
-    var season=Season.getSeason(req.params.id);
+app.get('/black-mirror/season/:id',async function (req, res) {
+    var season=await Season.getSeason(req.params.id);
     res.render('season',{
       layout:"black-mirror",
       bg:season.image,
       item:season
     });
 });
-app.get('/black-mirror/episode/:season_id/:id', function (req, res) {
-    var episode=Season.getEpisode(req.params.season_id,req.params.id)
+app.get('/black-mirror/episode/:season_id/:id',async function (req, res) {
+    var episode=await Season.getEpisode(req.params.season_id,req.params.id)
     res.render('episode',{
       layout:"black-mirror",
       bg:episode.image,
