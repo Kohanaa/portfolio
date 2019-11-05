@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "isomorphic-fetch": "^2.2.1",
-    "mongoose": "^5.6.11",
+    "mongoose": "^5.7.5",
     "node-sass-middleware": "^0.11.0"
   }
 }
